@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+ <html> 
+ <head> 
+ 	<title>Sign-Up</title>
+ </head> 
+ <body> 
+ 	<div align="center">
+ 	
+ 	<h1 align="center" style="color:#2c0975"><a style="text-decoration: none;" href="https://www.mldcc.com/">M.L.DAHANUKAR COLLEGE OF COMMERCE</a></h1>
+	
+	<h3 align="center">Railway Concession Application Registration</h3> 
+ 		
+ 		<fieldset style="width:35%;">
+ 			
+ 			<legend >Registration Form</legend> 
+ 			
+ 			<table border="0" cellspacing="5"> <tr> 
+ 				
+ 				<form method="POST" action="registration_db.php">
+
+ 				<td>Stream:
+					 <td><select name="stream" required="">
+				  		<option value="B.Com.">B.Com.</option>
+				  		<option value="B.M.S.">B.M.S.</option>
+				  		<option value="B.Com.(A.F)">B.Com.(A.F.)</option>
+				  		<option value="B.Com.(B.I)">B.Com.(B.I.)</option>
+				  		<option value="B.Sc.(I.T.)">B.Sc.(I.T.)</option>
+				  		<option value="B.Com.(F.M.)">B.Com.(F.M.)</option>
+				  		<option value="B.M.M.">B.M.M.</option>
+				  		<option value="B.Com./B.M.S(Env.Mgt.)">B.Com./B.M.S(Env.Mgt.)</option>
+					</select></td>
+				
+
+ 				<td>Class:</td>
+ 					<td><select name="class" required="">
+				  		<option value="FY">FY</option>
+				  		<option value="SY">SY</option>
+				  		<option value="TY">TY</option>
+					</select></td></tr>
+					 
+					 
+ 				<tr><td>Name:(Beginning with surname)</td>
+ 					<td><input style="text-transform: uppercase;"pattern="[a-zA-Z ]*$" type="text" name="name" autofocus="" required="" placeholder="As per on College Id"></td>
+ 				</tr>
+
+ 				<tr><td>Date of Birth:</td>
+ 					<td><input type="Date" name="dob" >
+ 					
+ 				
+ 				<tr><td>Roll No.:</td>
+ 					<td> <input type="text" name="rollno" pattern="^[0-9]*" required=""></td> 
+ 				</tr> 
+ 				
+ 				<tr><td>Division:</td>
+						<td><input style="text-transform: uppercase;" type="text" pattern="[a-zA-Z ]*$"  name="division" required=""></td>
+				</tr>
+ 				
+ 				<tr><td>PRN No.:</td>
+ 					<td> <input type="text" name="prn_no" pattern="^[0-9]{16}$" required="" placeholder="PRN No."></td> 
+ 				</tr> 
+ 				
+ 				<tr><td>Password:</td>
+ 					<td> <input type="password" name="password" id="pwd" required="" placeholder="Password"></td> 
+ 				</tr>
+ 				<tr><td>Confirm Password:</td>
+ 					<td><input type="password" id="cpwd" oninput="validatePassword()" required=""></td> 
+ 				</tr> 
+ 			</table>
+ 				
+ 				<br>
+ 				<input type="submit" style="font-size: 20px;" value="Sign-Up">
+ 				<input type="reset" style="font-size: 20px;" value="Cancel">
+ 				
+ 				<a href="login.php">Already registered?Login!</a> 
+ 				</tr> 
+ 				</form> 
+ 			
+ 		</fieldset>
+ 	</div> 
+ 	
+ 	<script type="text/javascript">
+ 		var pwd = document.getElementById("pwd"), cpwd = document.getElementById("cpwd");
+
+function validatePassword()
+{
+  if(pwd.value != cpwd.value) 
+  {
+    cpwd.setCustomValidity("Passwords Don't Match");
+  } 
+  else 
+  {
+    cpwd.setCustomValidity('');
+  }
+}
+
+pwd.onchange = validatePassword;
+cpwd.onkeyup = validatePassword;
+ 	</script>
+</body> 
+</html>
